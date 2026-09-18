@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "CSIT Policy";
+}
+
+<div class="container mt-4">
+
+    <h1>CSIT Department Page</h1>
+
+    <div class="alert alert-success">
+
+        <h4>Policy Authorization Successful</h4>
+
+        <p>
+            User:
+            <strong>@User.Identity?.Name</strong>
+        </p>
+
+        <p>
+            Department:
+            <strong>@ViewBag.Department</strong>
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <h5>CSITOnly Policy</h5>
+
+            <p>
+                This page requires the following claim:
+            </p>
+
+            <code>
+                Department = CSIT
+            </code>
+
+        </div>
+
+    </div>
+
+</div>

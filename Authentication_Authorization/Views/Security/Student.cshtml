@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Student Page";
+}
+
+<div class="container mt-4">
+
+    <h1>Student Page</h1>
+
+    <div class="alert alert-primary">
+
+        <h4>Student Access</h4>
+
+        <p>
+            Welcome,
+            <strong>@User.Identity?.Name</strong>
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <p>
+                This page is available only to users
+                with the Student role.
+            </p>
+
+            <code>
+                [Authorize(Roles = "Student")]
+            </code>
+
+        </div>
+
+    </div>
+
+</div>
