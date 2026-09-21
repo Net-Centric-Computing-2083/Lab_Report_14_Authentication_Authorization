@@ -1,0 +1,10 @@
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.csproj.AssemblyReference.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.AssemblyInfoInputs.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.AssemblyInfo.cs
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.csproj.CoreCompileInputs.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.MvcApplicationPartsAssemblyInfo.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.RazorAssemblyInfo.cache
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.RazorAssemblyInfo.cs
+/home/user/Desktop/6th sem/dotnet/Lab/Lab14/obj/Debug/net10.0/Lab14.MvcApplicationPartsAssemblyInfo.cs
