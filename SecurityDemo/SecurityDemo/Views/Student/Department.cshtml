@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Department";
+}
+
+<div class="text-center">
+    <h1>Student Department</h1>
+
+    @if (ViewBag.Department != null)
+    {
+        <h3>Department: @ViewBag.Department</h3>
+    }
+    else
+    {
+        <h3>Department claim not found.</h3>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Student";
+}
+
+<div class="text-center">
+    <h1>Student Dashboard</h1>
+
+    <p>Welcome, <strong>@User.Identity?.Name</strong>.</p>
+
+
+    <p>
+        Student role:
+        <strong>@(User.IsInRole("Student") ? "Yes" : "No")</strong>
+    </p>
+
+    <hr />
+
+    <a asp-controller="Student" asp-action="Department">
+        View my Department
+    </a>
+    <a asp-controller="Student" asp-action="CSITOnly">
+        CSIT Only Page
+    </a>
+</div>

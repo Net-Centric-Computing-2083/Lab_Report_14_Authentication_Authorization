@@ -1,0 +1,21 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1>Security Demo</h1>
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <h3>Welcome, @User.Identity?.Name!</h3>
+        <p>You are currently logged in.</p>
+    }
+    else
+    {
+        <p>You are not logged in.</p>
+    }
+</div>
