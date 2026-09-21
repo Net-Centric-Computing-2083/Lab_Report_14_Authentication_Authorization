@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Department";
+}
+
+<h1>Department</h1>
+
+@if (ViewBag.Department != null)
+{
+    <p>
+        <strong>Department:</strong>
+        @ViewBag.Department
+    </p>
+}
+else
+{
+    <p>No department claim found.</p>
+}

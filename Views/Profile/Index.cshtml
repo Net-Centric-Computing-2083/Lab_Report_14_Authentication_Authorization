@@ -1,0 +1,17 @@
+@model Microsoft.AspNetCore.Identity.IdentityUser
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h1>My Profile</h1>
+
+@if (Model != null)
+{
+    <p><strong>Email:</strong> @Model.Email</p>
+    <p><strong>Username:</strong> @Model.UserName</p>
+}
+else
+{
+    <p>User not found.</p>
+}
