@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-4">
+
+    <h1>Dashboard</h1>
+
+    <div class="alert alert-success">
+
+        <h4>Authentication Successful</h4>
+
+        <p>
+            You are logged in as:
+            <strong>@User.Identity?.Name</strong>
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-header">
+            Protected Dashboard
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                This page can only be accessed by
+                authenticated users.
+            </p>
+
+            <a asp-controller="Security"
+               asp-action="Profile"
+               class="btn btn-primary">
+
+                View Profile
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,51 +1,353 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Authentication_Authorization</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Authentication_Authorization.styles.css" asp-append-version="true" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] - SecurityDemo
+    </title>
+
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+    <!-- Site CSS -->
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+
+    <link rel="stylesheet"
+          href="~/SecurityDemo.styles.css"
+          asp-append-version="true" />
+
 </head>
+
+
 <body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm">
+
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Authentication_Authorization</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+
+
+                <!-- Logo -->
+
+                <a class="navbar-brand fw-bold"
+                   asp-controller="Home"
+                   asp-action="Index">
+
+                    SecurityDemo
+
+                </a>
+
+
+                <!-- Mobile Menu -->
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target=".navbar-collapse">
+
                     <span class="navbar-toggler-icon"></span>
+
                 </button>
+
+
+                <!-- Navigation -->
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+
+                    <!-- LEFT MENU -->
+
                     <ul class="navbar-nav flex-grow-1">
+
+
+                        <!-- Home -->
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Home"
+                               asp-action="Index">
+
+                                Home
+
+                            </a>
+
                         </li>
+
+
+                        <!-- Dashboard -->
+
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="Dashboard">
+
+                                Dashboard
+
+                            </a>
+
                         </li>
+
+
+                        <!-- Admin -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="Admin">
+
+                                Admin
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Student -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="Student">
+
+                                Student
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- CSIT -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="CSIT">
+
+                                CSIT Policy
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Claims -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="Claims">
+
+                                Claims
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Profile -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="Profile">
+
+                                Profile
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- Public -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark"
+                               asp-controller="Security"
+                               asp-action="Public">
+
+                                Public
+
+                            </a>
+
+                        </li>
+
                     </ul>
-                    <partial name="_LoginPartial" />
+
+
+                    <!-- RIGHT MENU -->
+
+                    <ul class="navbar-nav">
+
+
+                        @if (User.Identity != null &&
+                             User.Identity.IsAuthenticated)
+                        {
+
+                            <!-- Logged-in user -->
+
+                            <li class="nav-item">
+
+                                <span class="nav-link text-success fw-bold">
+
+                                    Welcome,
+                                    @User.Identity.Name
+
+                                </span>
+
+                            </li>
+
+
+                            <!-- Logout -->
+
+                            <li class="nav-item">
+
+                                <form asp-area="Identity"
+                                      asp-page="/Account/Logout"
+                                      method="post">
+
+                                    <button type="submit"
+                                            class="nav-link btn btn-link text-danger">
+
+                                        Logout
+
+                                    </button>
+
+                                </form>
+
+                            </li>
+
+                        }
+
+                        else
+                        {
+
+                            <!-- Register -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link text-dark"
+                                   asp-area="Identity"
+                                   asp-page="/Account/Register">
+
+                                    Register
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- Login -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link text-dark"
+                                   asp-area="Identity"
+                                   asp-page="/Account/Login">
+
+                                    Login
+
+                                </a>
+
+                            </li>
+
+                        }
+
+                    </ul>
+
                 </div>
+
             </div>
+
         </nav>
+
     </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
     <div class="container">
-        <main role="main" class="pb-3">
+
+        <main role="main"
+              class="pb-3">
+
             @RenderBody()
+
         </main>
+
     </div>
 
-    <footer class="border-top footer text-muted">
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="border-top footer text-muted mt-5">
+
         <div class="container">
-            &copy; 2026 - Authentication_Authorization - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
+            &copy; 2026 - SecurityDemo
+
+            |
+
+            <a asp-controller="Home"
+               asp-action="Privacy">
+
+                Privacy
+
+            </a>
+
         </div>
+
     </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false)
+
 </body>
+
 </html>
